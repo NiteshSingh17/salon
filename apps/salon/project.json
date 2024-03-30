@@ -1,0 +1,26 @@
+{
+  "name": "salon",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/salon/src",
+  "projectType": "application",
+  "targets": {
+    "start": {
+      "executor": "@nx/expo:start",
+      "options": {
+        "port": 8081
+      }
+    },
+    "build": {
+      "platform": "android",
+      "json": false,
+      "profile": "production",
+      "interactive": true,
+      "local": false,
+      "wait": true,
+      "clearCache": false,
+      "autoSubmit": false,
+      "autoSubmitWithProfile": "production"
+    }
+  },
+  "tags": []
+}

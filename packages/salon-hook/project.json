@@ -1,0 +1,8 @@
+{
+  "name": "salon-hook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/salon-hook/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}
