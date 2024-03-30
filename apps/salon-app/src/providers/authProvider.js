@@ -10,7 +10,7 @@ import {
   useState,
 } from "react";
 import { api, removeCookie, setCookie } from "../apis";
-import { ScreenLoader } from "../components/Loader";
+import { ScreenLoader } from "@salon/ui";
 import { LOCAL_STORAGE_CONSTANT, URIS } from "../constants";
 import { useIsDarkMode } from "@salon/hook";
 import { useAuthMe } from "../services";

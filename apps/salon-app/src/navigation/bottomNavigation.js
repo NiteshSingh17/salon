@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-unused-styles */
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import {
   AntDesign,
@@ -8,11 +8,11 @@ import {
   Ionicons,
   MaterialIcons,
   SimpleLineIcons,
-} from "@expo/vector-icons";
-import { StyleSheet, View } from "react-native";
-import { Text, TouchableRipple, useTheme } from "react-native-paper";
-import { useColors } from "@salon/hook";
-import { HomeScreen } from "../screens/home";
+} from '@expo/vector-icons';
+import { useColors } from '@salon/hook';
+import { StyleSheet, View } from 'react-native';
+import { Text, TouchableRipple, useTheme } from 'react-native-paper';
+import { HomeScreen } from '../screens/home';
 
 const Tab = createBottomTabNavigator();
 
@@ -37,10 +37,10 @@ export const TabNavigataion = () => {
 
 export const BottomTab = ({ isDarkMode, state, descriptors, navigation }) => {
   const style = styleSheet(isDarkMode);
-  const rippleColor = useColors("rippleColor");
+  const rippleColor = useColors('rippleColor');
   const handlePress = (route, isFocused) => {
     const event = navigation.emit({
-      type: "tabPress",
+      type: 'tabPress',
       target: route.key,
       canPreventDefault: true,
     });
@@ -51,8 +51,8 @@ export const BottomTab = ({ isDarkMode, state, descriptors, navigation }) => {
     }
   };
 
-  const inActiveColor = "#A0AEC0";
-  const activeColor = isDarkMode ? "white" : "#000000";
+  const inActiveColor = '#A0AEC0';
+  const activeColor = isDarkMode ? 'white' : '#000000';
   const TAB_ICONS = {
     Home: {
       true: <Entypo name="home" size={24} color={activeColor} />,
@@ -84,7 +84,7 @@ export const BottomTab = ({ isDarkMode, state, descriptors, navigation }) => {
     <View style={[style.container]}>
       <View
         style={{
-          flexDirection: "row",
+          flexDirection: 'row',
           flex: 1,
         }}
       >
@@ -110,7 +110,7 @@ export const BottomTab = ({ isDarkMode, state, descriptors, navigation }) => {
                 onPress={() => handlePress(route, isFocused)}
               >
                 <View>
-                  <View style={{ alignItems: "center" }}>
+                  <View style={{ alignItems: 'center' }}>
                     {TAB_ICONS[label][isFocused]}
                   </View>
                   <View>
@@ -135,17 +135,17 @@ const styleSheet = (isDark) =>
   StyleSheet.create({
     tab: {
       flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
+      justifyContent: 'center',
+      alignItems: 'center',
       paddingHorizontal: 10,
       paddingVertical: 5,
     },
     container: {
-      width: "100%",
-      maxHeight: "250px",
-      flexDirection: "row",
-      justifyContent: "space-between",
-      backgroundColor: isDark ? "#000000" : "#ffffff",
+      width: '100%',
+      maxHeight: '250px',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      backgroundColor: isDark ? '#000000' : '#ffffff',
       paddingVertical: 0,
     },
   });

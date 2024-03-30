@@ -1,14 +1,14 @@
-import { useNavigation } from "@react-navigation/native";
-import { Pressable, View } from "react-native";
-import { TextInput } from "react-native-paper";
-import { Container } from "../../components/Container";
-import { useCreateStyle } from "@salon/hook";
+import { useNavigation } from '@react-navigation/native';
+import { useCreateStyle } from '@salon/hook';
+import { Container } from '@salon/ui';
+import { Pressable, View } from 'react-native';
+import { TextInput } from 'react-native-paper';
 
 export const SearchBar = () => {
   const navigation = useNavigation();
   const style = useCreateStyle(styleSheet);
   const handleClick = () => {
-    navigation.navigate({ name: "Search" });
+    navigation.navigate({ name: 'Search' });
   };
 
   return (
@@ -37,10 +37,10 @@ const styleSheet = ({ secondaryContainer }) => ({
     backgroundColor: secondaryContainer,
   },
   searchInput: {
-    backgroundColor: "white",
-    borderColor: "none",
+    backgroundColor: 'white',
+    borderColor: 'none',
     borderWidth: 0,
     borderRadius: 100,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
 });

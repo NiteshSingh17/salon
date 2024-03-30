@@ -1,19 +1,19 @@
+import { useCreateStyle } from '@salon/hook';
+import { PrimaryBt } from '@salon/ui';
+import * as SecureStore from 'expo-secure-store';
+import * as WebBrowser from 'expo-web-browser';
+import { useCallback, useEffect } from 'react';
+import { Image, Text, View } from 'react-native';
 import { GOOGLE_SIGN_UP_URL } from 'react-native-dotenv';
-import * as SecureStore from "expo-secure-store";
-import * as WebBrowser from "expo-web-browser";
-import { useCallback, useEffect } from "react";
-import { Image, Text, View } from "react-native";
-import { useTheme } from "react-native-paper";
+import { useTheme } from 'react-native-paper';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withTiming,
-} from "react-native-reanimated";
-import { URL } from "react-native-url-polyfill";
-import { PrimaryBt } from "../../components/Buttons";
-import { CONSTANTS, LOCAL_STORAGE_CONSTANT } from "../../constants";
-import { useCreateStyle } from "@salon/hook";
-import { useAuthMe } from "../../services/authMe";
+} from 'react-native-reanimated';
+import { URL } from 'react-native-url-polyfill';
+import { CONSTANTS, LOCAL_STORAGE_CONSTANT } from '../../constants';
+import { useAuthMe } from '../../services/authMe';
 
 export const SignUpScreen = () => {
   return (
@@ -35,10 +35,10 @@ const LoginButton = () => {
           GOOGLE_SIGN_UP_URL,
           CONSTANTS.appUrl
         );
-        if (result.type === "success") {
+        if (result.type === 'success') {
           const url = new URL(result.url);
           const params = new URLSearchParams(url.search);
-          const token = params.get("token");
+          const token = params.get('token');
           await SecureStore.setItemAsync(
             LOCAL_STORAGE_CONSTANT.token,
             token
@@ -61,7 +61,7 @@ const Header = () => {
   const style = useCreateStyle(styleSheet);
   return (
     <View
-      style={[style.header, style[theme.dark ? "headerDark" : "headerLight"]]}
+      style={[style.header, style[theme.dark ? 'headerDark' : 'headerLight']]}
     >
       <Image1 />
     </View>
@@ -85,14 +85,14 @@ const Image1 = () => {
     <Animated.View style={[opacityStyle, { marginVertical: 20 }]}>
       <View>
         <Image
-          style={[{ width: "100%", height: "90%" }]}
-          source={require("../../assets/images/loginHeader1.jpg")}
+          style={[{ width: '100%', height: '90%' }]}
+          source={require('../../assets/images/loginHeader1.jpg')}
         />
         <View style={{ marginTop: -20 }}>
           <Text
             style={{
-              fontWeight: "bold",
-              textAlign: "center",
+              fontWeight: 'bold',
+              textAlign: 'center',
               fontSize: 40,
               color: theme?.colors.primary,
             }}
@@ -101,7 +101,7 @@ const Image1 = () => {
           </Text>
           <Text
             style={{
-              textAlign: "center",
+              textAlign: 'center',
               fontSize: 10,
               color: theme?.colors.primary,
             }}
@@ -119,26 +119,26 @@ const styleSheet = () => ({
     flex: 1,
   },
   headerLight: {
-    backgroundColor: "#ffffff",
-    color: "#000000",
+    backgroundColor: '#ffffff',
+    color: '#000000',
   },
   headerDark: {
-    backgroundColor: "#000000",
-    color: "#ffffff",
+    backgroundColor: '#000000',
+    color: '#ffffff',
   },
   loginSection: {
     borderTopWidth: 0,
-    borderTopColor: "rgba(0, 0, 0, 0.1)",
+    borderTopColor: 'rgba(0, 0, 0, 0.1)',
     padding: 10,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     minHeight: 200,
-    backgroundColor: "#F7FAFC",
+    backgroundColor: '#F7FAFC',
   },
   loginHeader: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     paddingVertical: 10,
     fontSize: 15,
-    color: "rgba(0, 0, 0, 0.6)",
+    color: 'rgba(0, 0, 0, 0.6)',
   },
 });

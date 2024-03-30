@@ -1,17 +1,16 @@
-import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
-import { debounce } from "lodash";
+import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import { useCreateStyle } from '@salon/hook';
+import { FlushedBt, PrimaryBt, TextX } from '@salon/ui';
+import { debounce } from 'lodash';
 import {
   createContext,
   useCallback,
   useContext,
   useMemo,
   useState,
-} from "react";
-import { View } from "react-native";
-import { Modal, Portal, useTheme } from "react-native-paper";
-import { FlushedBt, PrimaryBt } from "../components/Buttons";
-import { TextX } from "../components/Text";
-import { useCreateStyle } from "@salon/hook";
+} from 'react';
+import { View } from 'react-native';
+import { Modal, Portal, useTheme } from 'react-native-paper';
 
 const ErrorContext = createContext();
 
@@ -19,9 +18,9 @@ export const useErrorContext = () => useContext(ErrorContext);
 
 const ErrorDefaultValue = {
   show: false,
-  msg: "",
-  desc: "",
-  image: "",
+  msg: '',
+  desc: '',
+  image: '',
   retryHandler: null,
   closable: true,
 };
@@ -139,11 +138,11 @@ export const ErrorProvider = ({ children }) => {
 
 const styleSheet = ({ error, primary, secondary }) => ({
   modal: {
-    width: "100%",
+    width: '100%',
     padding: 20,
   },
   modalContainer: {
-    overflow: "hidden",
+    overflow: 'hidden',
     borderRadius: 10,
     backgroundColor: secondary,
   },
@@ -163,14 +162,14 @@ const styleSheet = ({ error, primary, secondary }) => ({
   footer: {
     paddingVertical: 20,
     paddingHorizontal: 30,
-    flexDirection: "row",
+    flexDirection: 'row',
     flexGrow: 1,
-    width: "100%",
-    alignItems: "stretch",
-    justifyContent: "flex-end",
+    width: '100%',
+    alignItems: 'stretch',
+    justifyContent: 'flex-end',
   },
   childrenContainer: {
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
   },
 });

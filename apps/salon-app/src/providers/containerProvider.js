@@ -1,12 +1,12 @@
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import {
   AuthProvider,
   PaperProviderContainer,
   QueryClientProviderContainer,
-} from ".";
-import { AppStatuBar } from "../components";
-import { NavigationContainerX } from "../navigation";
-import { ErrorProvider } from "./errorProvider";
+} from '.';
+import { AppStatuBar } from '../components';
+import { NavigationContainerX } from '../navigation';
+import { ErrorProvider } from './errorProvider';
 
 export const Providers = ({ children }) => {
   return (

@@ -1,6 +1,7 @@
 export * from './components/Avatar';
 export * from './components/BottomSlider';
 export * from './components/Buttons';
+export * from './components/Container';
 export * from './components/Dropdown';
 export * from './components/ImageViewer';
 export * from './components/Input';

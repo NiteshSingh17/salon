@@ -1,2 +1,1 @@
-export * from "./AppStatuBar"
-export * from "./Avatar"
+export * from './AppStatuBar';
