@@ -1,5 +1,6 @@
 export const GLOBAL_URIS = {
   adminApp: 'exp://192.168.1.41:8081',
+  app: 'exp://192.168.1.41:8081',
 };
 
 export const GENDERS = {

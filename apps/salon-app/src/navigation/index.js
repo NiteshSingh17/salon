@@ -1,11 +1,11 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { useTheme } from "react-native-paper";
-import { useAuthContext } from "../providers/authProvider";
-import { Setup } from "../screens/setup";
-import { SignUpScreen } from "../screens/signup";
-import { AuthenticatedRoutes } from "./authRoute";
-import { navigationRef } from "./navigatonRef";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { useTheme } from 'react-native-paper';
+import { useAuthContext } from '../providers/authProvider';
+import { Setup } from '../screens/setup';
+import { SignUpScreen } from '../screens/signup';
+import { AuthenticatedRoutes } from './authRoute';
+import { navigationRef } from './navigatonRef';
 
 const Stack = createStackNavigator();
 
@@ -19,11 +19,11 @@ export const NavigationContainerX = ({ children }) => {
 };
 
 export const Navigation = () => {
-  const { isAuthenticated, shopData } = useAuthContext();
+  const { isAuthenticated, userData } = useAuthContext();
+  const isSetupRequired = !userData?.contact || !userData.ltd;
   return (
     <>
-      {isAuthenticated === true &&
-      (shopData === undefined || shopData !== null) ? (
+      {isAuthenticated === true && isSetupRequired === false ? (
         <AuthenticatedRoutes />
       ) : (
         <Stack.Navigator

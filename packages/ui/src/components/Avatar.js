@@ -21,11 +21,14 @@ export const Avatar = ({
 }) => {
   const getAvatarName = (name = '') => {
     if (!name) return '';
-    let splitText = name.split(' ').filter((a) => a.length);
+    let splitText = name
+      .split(' ')
+      .filter((a) => a.length)
+      .map((letter) => letter.toUpperCase());
     if (splitText?.length > 1) {
       return splitText[0].at(0) + splitText[1].at(0);
     }
-    return splitText[0].slice(0, 2);
+    return splitText?.[0]?.slice?.(0, 2) ?? '';
   };
   const [darkLight, lightGray] = useColors(['darkLight', 'lightGray']);
   const { dark } = useTheme();
@@ -60,7 +63,7 @@ export const Avatar = ({
         borderWidth: 0,
         backgroundColor: avatarBackground,
       }}
-      color={color || (dark ? '#000000' : '#ffffff')}
+      color={color || (dark ? '#ffffff' : '#000000')}
       size={size}
       label={getAvatarName(name)}
     />

@@ -47,7 +47,6 @@ export const Sidebar = ({ bookings }) => {
   const hideBookingDetail = () => {
     setBookingId(null);
   };
-
   // const scrollToCurrentTime = () => {
   //   let currentTime = GetTodayDate().format("hh a");
   //   let currentTimeIndex = times.findIndex(
@@ -107,7 +106,8 @@ const HourContainer = memo(
             const minuteBookings = bookings.filter(
               (booking) =>
                 dayjs(booking.date).minute() >= hourMinute.minute() &&
-                dayjs(booking.date).minute() < endTime.minute()
+                (dayjs(booking.date).minute() < endTime.minute() ||
+                  endTime.minute() === 0)
             );
             return (
               <View
@@ -162,7 +162,6 @@ const HourContainer = memo(
                               </View>
                             ))}
                           </View>
-                          {/* <Text >{time.format(TIME_FORMATS.full)}</Text> */}
                         </View>
                       </TouchableOpacity>
                     </View>

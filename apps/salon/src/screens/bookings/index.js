@@ -22,6 +22,7 @@ export const Bookings = () => {
   const { data: bookings, isFetching } = useGetDateBooking(
     derivedDate.format(DATE_FORMATS.server)
   );
+
   return (
     <ScreenContainer>
       <View

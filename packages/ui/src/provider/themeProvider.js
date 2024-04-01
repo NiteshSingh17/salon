@@ -15,7 +15,6 @@ export { useTheme };
 export const ThemeProvider = ({ children }) => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
   const colorScheme = useColorScheme();
-  console.log('colorScheme', colorScheme);
   const { theme } = useMaterial3Theme('dark');
 
   const globalColors = {

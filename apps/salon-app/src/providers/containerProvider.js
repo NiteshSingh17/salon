@@ -1,9 +1,6 @@
+import { ThemeProvider } from '@salon/ui';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import {
-  AuthProvider,
-  PaperProviderContainer,
-  QueryClientProviderContainer,
-} from '.';
+import { AuthProvider, QueryClientProviderContainer } from '.';
 import { AppStatuBar } from '../components';
 import { NavigationContainerX } from '../navigation';
 import { ErrorProvider } from './errorProvider';
@@ -11,7 +8,7 @@ import { ErrorProvider } from './errorProvider';
 export const Providers = ({ children }) => {
   return (
     <SafeAreaProvider>
-      <PaperProviderContainer>
+      <ThemeProvider>
         <QueryClientProviderContainer>
           <ErrorProvider>
             <AuthProvider>
@@ -20,7 +17,7 @@ export const Providers = ({ children }) => {
             </AuthProvider>
           </ErrorProvider>
         </QueryClientProviderContainer>
-      </PaperProviderContainer>
+      </ThemeProvider>
     </SafeAreaProvider>
   );
 };

@@ -24,7 +24,7 @@ export const Input = ({ required, label, light, bordered = true, ...rest }) => {
   return (
     <View>
       <View style={{ flexDirection: 'row', gap: 4 }}>
-        <Text style={{ marginBottom: 10 }}>{label}</Text>
+        <Label>{label}</Label>
         {required && <Text color={error}>*</Text>}
       </View>
       <TextInput
@@ -89,6 +89,16 @@ export const DatePicker = ({ children, date, onSelect }) => {
   );
 };
 
+export const Label = ({ children }) => {
+  const style = useCreateStyle(styleSheet);
+  return <Text style={style.label}>{children}</Text>;
+};
+
+export const FormContainer = ({ children }) => {
+  const style = useCreateStyle(styleSheet);
+  return <View style={style.formContainer}>{children}</View>;
+};
+
 const styleSheet = ({ darkLight }, isDark) => ({
   datePickerBox: {
     padding: 20,
@@ -98,5 +108,12 @@ const styleSheet = ({ darkLight }, isDark) => ({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
+  },
+  label: {
+    marginBottom: 10,
+  },
+  formContainer: {
+    flexDirection: 'column',
+    gap: 30,
   },
 });

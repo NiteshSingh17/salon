@@ -1,11 +1,11 @@
-import { useNavigation } from "@react-navigation/native";
-import { useQueryClient } from "@tanstack/react-query";
-import { useCallback, useState } from "react";
-import { View } from "react-native";
-import { ConfirmAlert } from "../../components/confirmAlert";
-import { URIS } from "../../constants";
-import { useCreateShopService } from "../../services";
-import { Services } from "../setup/services";
+import { useNavigation } from '@react-navigation/native';
+import { useQueryClient } from '@tanstack/react-query';
+import { useCallback, useState } from 'react';
+import { View } from 'react-native';
+import { ConfirmAlert } from '../../components/confirmAlert';
+import { URIS } from '../../constants';
+import { useCreateShopService } from '../../services';
+import { Services } from '../setup/services';
 
 export const AddNewService = () => {
   const [showConfirmModal, setShowConfirmModal] = useState({
@@ -16,13 +16,11 @@ export const AddNewService = () => {
   const queryClient = useQueryClient();
   const { isPending, mutate } = useCreateShopService({
     onSuccess: (res) => {
-      console.log("Res", res);
       queryClient.setQueryData([URIS.shopServices], (prev) => {
-        console.log("update", res, prev);
         return [...prev, ...res];
       });
       setShowConfirmModal({ show: false });
-      navigation.navigate("ServiceAddedSuccess");
+      navigation.navigate('ServiceAddedSuccess');
     },
   });
 

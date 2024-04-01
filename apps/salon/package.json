@@ -17,10 +17,7 @@
     "@tanstack/react-query": "*",
     "@tanstack/react-query-persist-client": "*",
     "apisauce": "*",
-    "axios": "*",
-    "babel-eslint": "*",
     "dayjs": "*",
-    "eslint": "*",
     "expo": "*",
     "expo-dev-client": "*",
     "expo-image-picker": "*",
@@ -35,12 +32,9 @@
     "react-dom": "*",
     "react-native": "*",
     "react-native-dotenv": "*",
-    "react-native-element-dropdown": "*",
     "react-native-gesture-handler": "*",
     "react-native-maps": "*",
-    "react-native-modal": "*",
     "react-native-paper": "*",
-    "react-native-paper-dates": "*",
     "react-native-reanimated": "*",
     "react-native-safe-area-context": "*",
     "react-native-screens": "*",
@@ -93,7 +87,8 @@
     "react-test-renderer": "*",
     "ts-jest": "*",
     "ts-node": "*",
-    "typescript": "*"
+    "typescript": "*",
+    "babel-eslint": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/salon && cp package-lock.json apps/salon",

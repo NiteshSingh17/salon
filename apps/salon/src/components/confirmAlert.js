@@ -1,5 +1,5 @@
 import { useBackPress, useCreateStyle } from '@salon/hook';
-import { BottomSlider, FlushedBt, PrimaryBt } from '@salon/ui';
+import { BottomSlider, FlushedBt, PrimaryBt, Text } from '@salon/ui';
 import { View } from 'react-native';
 
 export const ConfirmAlert = ({

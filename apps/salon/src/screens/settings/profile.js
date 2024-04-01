@@ -107,7 +107,6 @@ export const ProfileSetting = () => {
 
   const handleToogleGender = (gender) => {
     let newGenders = [];
-    console.log('press');
     if (shopData.genders.find((g) => g === gender)) {
       newGenders = shopData.genders.filter((g) => g !== gender);
     } else {

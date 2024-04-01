@@ -1,16 +1,16 @@
-import { AntDesign } from "@expo/vector-icons";
-import { TouchableOpacity, View } from "react-native";
+import { AntDesign } from '@expo/vector-icons';
+import { useColors, useCreateStyle } from '@salon/hook';
+import { TouchableOpacity, View } from 'react-native';
 import {
   Dropdown as DropDown,
   MultiSelect,
-} from "react-native-element-dropdown";
-import { useColors, useCreateStyle } from "@salon/hook";
-import { Text } from "react-native-paper";
+} from 'react-native-element-dropdown';
+import { Text } from 'react-native-paper';
 
 export const Dropdown = ({
   loading,
   value,
-  placeholder = " ",
+  placeholder = ' ',
   list,
   onChange,
 }) => {
@@ -25,9 +25,9 @@ export const Dropdown = ({
       // maxHeight={300}
       labelField="label"
       valueField="value"
-      placeholder={loading ? "loading..." : placeholder}
+      placeholder={loading ? 'loading...' : placeholder}
       value={value}
-      mode="modal"
+      mode="default"
       onChange={(d) => {
         onChange(d?.value, d);
       }}
@@ -38,12 +38,12 @@ export const Dropdown = ({
 export const MutliSelectDropdown = ({
   loading,
   value,
-  placeholder = " ",
+  placeholder = ' ',
   list,
   onChange,
 }) => {
   const style = useCreateStyle(styleSheet);
-  const [secondary] = useColors(["secondary"]);
+  const [secondary] = useColors(['secondary']);
 
   const renderItem = (item) => {
     return (
@@ -64,9 +64,8 @@ export const MutliSelectDropdown = ({
       maxHeight={300}
       labelField="label"
       valueField="value"
-      placeholder={loading ? "loading..." : placeholder}
+      placeholder={loading ? 'loading...' : placeholder}
       value={value}
-      mode="modal"
       onChange={onChange}
       renderItem={renderItem}
       renderSelectedItem={(item, unSelect) => (
@@ -83,11 +82,11 @@ export const MutliSelectDropdown = ({
 
 const styleSheet = ({ primary, secondary, darkLight, black }, dark) => ({
   dropdown: {
-    backgroundColor: dark ? darkLight : "#e2e8f0",
+    backgroundColor: dark ? darkLight : '#e2e8f0',
     padding: 10,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: dark ? darkLight : "#e2e8f0",
+    borderColor: dark ? darkLight : '#e2e8f0',
   },
   selectedTextStyle: {
     color: primary,
@@ -101,8 +100,8 @@ const styleSheet = ({ primary, secondary, darkLight, black }, dark) => ({
   container: { padding: 16 },
   dropdownMutliselect: {
     height: 50,
-    shadowColor: "#000",
-    backgroundColor: dark ? darkLight : "#e2e8f0",
+    shadowColor: '#000',
+    backgroundColor: dark ? darkLight : '#e2e8f0',
     padding: 10,
     borderRadius: 10,
   },
@@ -112,7 +111,6 @@ const styleSheet = ({ primary, secondary, darkLight, black }, dark) => ({
   },
   selectedTextStyleMutilselect: {
     fontSize: 14,
-    color: "red",
   },
   iconStyle: {
     width: 20,
@@ -128,14 +126,14 @@ const styleSheet = ({ primary, secondary, darkLight, black }, dark) => ({
   },
   item: {
     padding: 17,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   selectedStyle: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: 14,
     backgroundColor: primary,
     marginTop: 8,

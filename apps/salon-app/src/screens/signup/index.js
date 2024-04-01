@@ -1,3 +1,4 @@
+import { GLOBAL_URIS } from '@salon/constant';
 import { useCreateStyle } from '@salon/hook';
 import { PrimaryBt } from '@salon/ui';
 import * as SecureStore from 'expo-secure-store';
@@ -12,7 +13,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import { URL } from 'react-native-url-polyfill';
-import { CONSTANTS, LOCAL_STORAGE_CONSTANT } from '../../constants';
+import { LOCAL_STORAGE_CONSTANT } from '../../constants';
 import { useAuthMe } from '../../services/authMe';
 
 export const SignUpScreen = () => {
@@ -33,7 +34,7 @@ const LoginButton = () => {
       (async () => {
         const result = await WebBrowser.openAuthSessionAsync(
           GOOGLE_SIGN_UP_URL,
-          CONSTANTS.appUrl
+          GLOBAL_URIS.app
         );
         if (result.type === 'success') {
           const url = new URL(result.url);
